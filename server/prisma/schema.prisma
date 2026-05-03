@@ -10,3 +10,69 @@ generator client {
 datasource db {
   provider = "postgresql"
 }
+
+model Property {
+  id         String   @id @default(uuid())
+  name       String
+  address    String
+  unitCount  Int
+  createdAt  DateTime @default(now())
+  units      Unit[]
+}
+
+model Unit {
+  id           String   @id @default(uuid())
+  propertyId   String
+  unitNumber   String
+  bedrooms     Int
+  rentAmount   Decimal
+  status       String   @default("vacant")
+  createdAt    DateTime @default(now())
+  property     Property @relation(fields: [propertyId], references: [id])
+  leases       Lease[]
+}
+
+model Tenant {
+  id        String   @id @default(uuid())
+  fullName  String
+  email     String   @unique
+  phone     String
+  createdAt DateTime @default(now())
+  leases    Lease[]
+}
+
+model Lease {
+  id           String    @id @default(uuid())
+  unitId       String
+  tenantId     String
+  startDate    DateTime
+  endDate      DateTime
+  monthlyRent  Decimal
+  status       String    @default("active")
+  createdAt    DateTime  @default(now())
+  unit         Unit      @relation(fields: [unitId], references: [id])
+  tenant       Tenant    @relation(fields: [tenantId], references: [id])
+  payments     Payment[]
+  maintenanceRequests MaintenanceRequest[]
+}
+
+model Payment {
+  id        String   @id @default(uuid())
+  leaseId   String
+  amount    Decimal
+  paidOn    DateTime
+  method    String
+  status    String   @default("pending")
+  createdAt DateTime @default(now())
+  lease     Lease    @relation(fields: [leaseId], references: [id])
+}
+
+model MaintenanceRequest {
+  id        String   @id @default(uuid())
+  leaseId   String
+  title     String
+  priority  String   @default("low")
+  status    String   @default("open")
+  createdAt DateTime @default(now())
+  lease     Lease    @relation(fields: [leaseId], references: [id])
+}
