@@ -63,4 +63,30 @@ router.delete('/:id', async (req, res) => {
   }
 })
 
+// PATCH archive tenant
+router.patch('/:id/archive', async (req, res) => {
+  try {
+    const tenant = await prisma.tenant.update({
+      where: { id: req.params.id },
+      data: { status: 'archived' }
+    })
+    res.json(tenant)
+  } catch {
+    res.status(500).json({ error: 'Failed to archive tenant' })
+  }
+})
+
+// PATCH reactivate tenant
+router.patch('/:id/reactivate', async (req, res) => {
+  try {
+    const tenant = await prisma.tenant.update({
+      where: { id: req.params.id },
+      data: { status: 'active' }
+    })
+    res.json(tenant)
+  } catch {
+    res.status(500).json({ error: 'Failed to reactivate tenant' })
+  }
+})
+
 module.exports = router

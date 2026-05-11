@@ -37,6 +37,7 @@ model Tenant {
   fullName  String
   email     String   @unique
   phone     String
+  status    String   @default("active")
   createdAt DateTime @default(now())
   leases    Lease[]
 }
