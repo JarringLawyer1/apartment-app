@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Dashboard from './pages/Dashboard'
 import Properties from './pages/Properties'
+import Tenants from './pages/Tenants'
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Dashboard />} />
           <Route path="/properties" element={<Properties />} />
+          <Route path="/tenants" element={<Tenants />} />
         </Routes>
       </div>
     </div>
