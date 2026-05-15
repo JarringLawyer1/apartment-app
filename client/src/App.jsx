@@ -3,6 +3,7 @@ import Navbar from './components/Navbar'
 import Dashboard from './pages/Dashboard'
 import Properties from './pages/Properties'
 import Tenants from './pages/Tenants'
+import Units from './pages/Units'
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Route path="/" element={<Dashboard />} />
           <Route path="/properties" element={<Properties />} />
           <Route path="/tenants" element={<Tenants />} />
+          <Route path="/units" element={<Units />} />
         </Routes>
       </div>
     </div>
