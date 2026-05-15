@@ -4,6 +4,7 @@ import Dashboard from './pages/Dashboard'
 import Properties from './pages/Properties'
 import Tenants from './pages/Tenants'
 import Units from './pages/Units'
+import Maintenance from './pages/Maintenance'
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/properties" element={<Properties />} />
           <Route path="/tenants" element={<Tenants />} />
           <Route path="/units" element={<Units />} />
+          <Route path="/maintenance" element={<Maintenance />} />
         </Routes>
       </div>
     </div>

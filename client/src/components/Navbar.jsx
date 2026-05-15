@@ -16,6 +16,7 @@ function Navbar() {
       <Link to="/properties" style={{ color: '#ecf0f1' }}>Properties</Link>
       <Link to="/units" style={{ color: '#ecf0f1' }}>Units</Link>
       <Link to="/tenants" style={{ color: '#ecf0f1' }}>Tenants</Link>
+      <Link to="/maintenance" style={{ color: '#ecf0f1' }}>Maintenance</Link>
     </nav>
   )
 }
