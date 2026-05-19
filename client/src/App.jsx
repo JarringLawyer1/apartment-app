@@ -5,6 +5,7 @@ import Properties from './pages/Properties'
 import Tenants from './pages/Tenants'
 import Units from './pages/Units'
 import Maintenance from './pages/Maintenance'
+import Leases from './pages/Leases'
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/tenants" element={<Tenants />} />
           <Route path="/units" element={<Units />} />
           <Route path="/maintenance" element={<Maintenance />} />
+          <Route path="/leases" element={<Leases />} />
         </Routes>
       </div>
     </div>
