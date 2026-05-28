@@ -9,6 +9,7 @@ import Home from './pages/public/Home'
 import FloorPlans from './pages/public/FloorPlans'
 import Amenities from './pages/public/Amenities'
 import Contact from './pages/public/Contact'
+import Login from './pages/public/Login'
 
 // Management pages
 import Dashboard from './pages/Dashboard'
@@ -27,6 +28,7 @@ function App() {
         <Route path="/floor-plans" element={<FloorPlans />} />
         <Route path="/amenities" element={<Amenities />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/login" element={<Login />} />
       </Route>
 
       {/* Management routes */}

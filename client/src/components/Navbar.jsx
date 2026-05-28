@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { UserButton } from '@clerk/clerk-react'
 
 function Navbar() {
   return (
@@ -12,12 +13,15 @@ function Navbar() {
       <span style={{ color: 'white', fontWeight: 'bold', fontSize: '18px' }}>
         🏢 Apartment Manager
       </span>
-      <Link to="/" style={{ color: '#ecf0f1' }}>Dashboard</Link>
-      <Link to="/properties" style={{ color: '#ecf0f1' }}>Properties</Link>
-      <Link to="/units" style={{ color: '#ecf0f1' }}>Units</Link>
-      <Link to="/tenants" style={{ color: '#ecf0f1' }}>Tenants</Link>
-      <Link to="/maintenance" style={{ color: '#ecf0f1' }}>Maintenance</Link>
-      <Link to="/leases" style={{ color: '#ecf0f1' }}>Leases</Link>
+      <Link to="/manage/dashboard" style={{ color: '#ecf0f1' }}>Dashboard</Link>
+      <Link to="/manage/properties" style={{ color: '#ecf0f1' }}>Properties</Link>
+      <Link to="/manage/tenants" style={{ color: '#ecf0f1' }}>Tenants</Link>
+      <Link to="/manage/units" style={{ color: '#ecf0f1' }}>Units</Link>
+      <Link to="/manage/leases" style={{ color: '#ecf0f1' }}>Leases</Link>
+      <Link to="/manage/maintenance" style={{ color: '#ecf0f1' }}>Maintenance</Link>
+      <div style={{ marginLeft: 'auto' }}>
+        <UserButton afterSignOutUrl="/" />
+      </div>
     </nav>
   )
 }
